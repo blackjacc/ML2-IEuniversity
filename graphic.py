@@ -33,7 +33,6 @@ p.scatter(x, y, radius=radii,
           fill_color=colors, fill_alpha=0.6,
           line_color=None)
 
-output_file("color_scatter.html", title="color_scatter.py example")
 
 show(p)  # open a browser
 
@@ -67,4 +66,10 @@ plt.savefig("test.png",
                     format='png',dpi=150)
 plt.tight_layout()
 
+#%%
 
+import numpy as np, pandas as pd; np.random.seed(0)
+import seaborn as sns; 
+sns.set(style="darkgrid", color_codes=True, palette= "Reds")
+
+g = sns.jointplot(x="avg_of_cash_wd_90_days", y="age_in_year", data=df)
